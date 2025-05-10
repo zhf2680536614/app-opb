@@ -1,0 +1,31 @@
+server:
+  port: 18080
+spring:
+  profiles:
+    active: dev
+  main:
+    allow-circular-references: true
+  datasource:
+    driver-class-name: ${opb.datasource.driver-class-name}
+    url: jdbc:mysql://${opb.datasource.host}:${opb.datasource.port}/${opb.datasource.database}?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+    username: ${opb.datasource.username}
+    password: ${opb.datasource.password}
+
+mybatis-plus:
+  configuration:
+    default-enum-type-handler: com.baomidou.mybatisplus.core.handlers.MybatisEnumTypeHandler
+    map-underscore-to-camel-case: true
+  global-config:
+    db-config:
+      update-strategy: not_null
+      id-type: assign_id
+      logic-delete-field: 0
+    banner: true
+
+logging:
+  level:
+    com:
+      opb:
+        mapper: debug
+        service: info
+        controller: info

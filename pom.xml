@@ -8,6 +8,14 @@
     <packaging>pom</packaging>
     <name>app-opb</name>
     <description>app-opb</description>
+
+    <parent>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <groupId>org.springframework.boot</groupId>
+        <version>3.3.2</version>
+        <relativePath/>
+    </parent>
+
     <modules>
         <module>pojo</module>
         <module>service</module>
@@ -22,7 +30,7 @@
         <org.projectlombok.version>1.18.8</org.projectlombok.version>
         <fastjson.version>1.2.83</fastjson.version>
         <mysql-connector-java.version>8.0.30</mysql-connector-java.version>
-        <mybatis-plus-boot-starter.version>3.5.12</mybatis-plus-boot-starter.version>
+        <mybatis-plus.version>3.5.6</mybatis-plus.version>
         <minio.version>8.4.3</minio.version>
         <swagger-annotations.version>1.5.20</swagger-annotations.version>
         <swagger-spring-boot-starter.version>1.9.0.RELEASE</swagger-spring-boot-starter.version>
@@ -33,13 +41,6 @@
 
     <dependencyManagement>
         <dependencies>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-dependencies</artifactId>
-                <version>${spring-boot.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
             <!-- lombok，简化类的构建-->
             <dependency>
                 <groupId>org.projectlombok</groupId>
@@ -58,11 +59,14 @@
                 <artifactId>mysql-connector-java</artifactId>
                 <version>${mysql-connector-java.version}</version>
             </dependency>
+
+            <!--mybatis-plus-->
             <dependency>
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
-                <version>${mybatis-plus-boot-starter.version}</version>
+                <version>${mybatis-plus.version}</version>
             </dependency>
+
             <dependency>
                 <groupId>com.spring4all</groupId>
                 <artifactId>swagger-spring-boot-starter</artifactId>
