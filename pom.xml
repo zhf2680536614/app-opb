@@ -35,12 +35,22 @@
         <swagger-annotations.version>1.5.20</swagger-annotations.version>
         <swagger-spring-boot-starter.version>1.9.0.RELEASE</swagger-spring-boot-starter.version>
         <poi>3.16</poi>
-        <jjwt>0.9.1</jjwt>
+        <jjwt-api.version>0.11.2</jjwt-api.version>
+        <jjwt-impl.version>0.11.2</jjwt-impl.version>
+        <jjwt-jackson.version>0.11.2</jjwt-jackson.version>
         <knife4j>3.0.2</knife4j>
+        <hutool.version>5.8.26</hutool.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
+            <!--hutool-->
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+
             <!-- lombok，简化类的构建-->
             <dependency>
                 <groupId>org.projectlombok</groupId>
@@ -52,21 +62,18 @@
                 <artifactId>swagger-annotations</artifactId>
                 <version>${swagger-annotations.version}</version>
             </dependency>
-
             <!-- mySQL数据库驱动包管理 -->
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
                 <version>${mysql-connector-java.version}</version>
             </dependency>
-
             <!--mybatis-plus-->
             <dependency>
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
                 <version>${mybatis-plus.version}</version>
             </dependency>
-
             <dependency>
                 <groupId>com.spring4all</groupId>
                 <artifactId>swagger-spring-boot-starter</artifactId>
@@ -92,8 +99,20 @@
             </dependency>
             <dependency>
                 <groupId>io.jsonwebtoken</groupId>
-                <artifactId>jjwt</artifactId>
-                <version>${jjwt}</version>
+                <artifactId>jjwt-api</artifactId>
+                <version>${jjwt-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-impl</artifactId>
+                <version>${jjwt-impl.version}</version>
+                <scope>runtime</scope>
+            </dependency>
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-jackson</artifactId>
+                <version>${jjwt-jackson.version}</version>
+                <scope>runtime</scope>
             </dependency>
             <!-- poi -->
             <dependency>
